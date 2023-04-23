@@ -4,7 +4,7 @@ import {IL_GetStarted_PNG, colors, fonts} from '../../res';
 import Button from '../../components/atoms/Button';
 import {Gap} from '../../components/atoms';
 
-const GetStarted = () => {
+const GetStarted = ({navigation}: any) => {
   return (
     <View style={styles.container}>
       <Image source={IL_GetStarted_PNG} style={styles.GetStartedImage} />
@@ -12,7 +12,7 @@ const GetStarted = () => {
         <Text style={styles.txtSlogan}>Shop Your Daily</Text>
         <Text style={styles.txtSlogan}>Necessary</Text>
         <Gap height={90} />
-        <Button />
+        <Button onPress={() => navigation.replace('MainApp')} />
       </View>
     </View>
   );

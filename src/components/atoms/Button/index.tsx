@@ -1,13 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../res';
 
-const Button = () => {
+interface ButtonProps {
+  onPress: () => void;
+}
+
+const Button = ({onPress}: ButtonProps) => {
   return (
     <View>
-      <View style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={onPress}>
         <Text style={styles.buttonTxt}>Get Started</Text>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
