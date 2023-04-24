@@ -12,7 +12,12 @@ import {
   colors,
 } from '../../../res';
 
-const Icon = ({label, isFocused}: any) => {
+type IconProps = {
+  label: string;
+  isFocused: boolean;
+};
+
+const Icon = ({label, isFocused}: IconProps) => {
   switch (label) {
     case 'Home':
       return isFocused ? <IC_Home_color /> : <IC_Home />;
@@ -27,10 +32,20 @@ const Icon = ({label, isFocused}: any) => {
   }
 };
 
-const BottomNavigator = ({state, descriptors, navigation}: any) => {
+type BottomNavigatorProps = {
+  state: any;
+  descriptors: any;
+  navigation: any;
+};
+
+const BottomNavigator = ({
+  state,
+  descriptors,
+  navigation,
+}: BottomNavigatorProps) => {
   return (
     <View style={styles.container}>
-      {state.routes.map((route: any, index: any) => {
+      {state.routes.map((route: any, index: number) => {
         const {options} = descriptors[route.key];
         const label =
           options.tabBarLabel !== undefined
