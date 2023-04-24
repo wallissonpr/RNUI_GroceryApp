@@ -1,44 +1,13 @@
 import React from 'react';
-import {
-  NativeStackScreenProps,
-  createNativeStackNavigator,
-} from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GetStarted from '../screens/GetStarted';
 import {Favorite, Home, Notification, Profile} from '../screens';
-import {
-  BottomTabScreenProps,
-  createBottomTabNavigator,
-} from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import BottomNavigator from '../components/molecules/BottomNavigator';
-import {
-  CompositeScreenProps,
-  NavigatorScreenParams,
-} from '@react-navigation/native';
 
-export type RootStackParamList = {
-  GetStarted: undefined;
-  MainApp: NavigatorScreenParams<TabsStackParamList>;
-};
+const RootStack = createNativeStackNavigator();
 
-export type TabsStackParamList = {
-  Home: undefined;
-  Favorite: undefined;
-  Notification: undefined;
-  Profile: undefined;
-};
-
-const RootStack = createNativeStackNavigator<RootStackParamList>();
-
-export type RootStackScreenProps<T extends keyof RootStackParamList> =
-  NativeStackScreenProps<RootStackParamList, T>;
-
-const TabsStack = createBottomTabNavigator<TabsStackParamList>();
-
-export type TabsStackScreenProps<T extends keyof TabsStackParamList> =
-  CompositeScreenProps<
-    BottomTabScreenProps<TabsStackParamList, T>,
-    RootStackScreenProps<'MainApp'>
-  >;
+const TabsStack = createBottomTabNavigator();
 
 function MainApp() {
   return (

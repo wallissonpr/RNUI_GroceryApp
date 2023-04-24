@@ -22,12 +22,18 @@ import {
   colors,
   fonts,
 } from '../../res';
-import {BoxItemCategories, Gap, Header} from '../../components';
+import {
+  BoxItemCategories,
+  BoxItemTopProducts,
+  Gap,
+  Header,
+} from '../../components';
 
-const Home = ({navigation}: TabsStackScreenProps<'Home'>) => {
+const Home = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
   const dataTopProducts = [
     {
+      index: 1,
       name: 'Grapes',
       icon: IL_Grapes_PNG,
       bfColor: 'rgba(227,206,243,0.5)',
@@ -35,6 +41,7 @@ const Home = ({navigation}: TabsStackScreenProps<'Home'>) => {
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
     },
     {
+      index: 2,
       name: 'Grapes',
       icon: IL_Grapes_PNG,
       bfColor: 'rgba(227,206,243,0.5)',
@@ -42,6 +49,7 @@ const Home = ({navigation}: TabsStackScreenProps<'Home'>) => {
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
     },
     {
+      index: 3,
       name: 'Grapes',
       icon: IL_Grapes_PNG,
       bfColor: 'rgba(227,206,243,0.5)',
@@ -49,6 +57,7 @@ const Home = ({navigation}: TabsStackScreenProps<'Home'>) => {
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
     },
     {
+      index: 4,
       name: 'Grapes',
       icon: IL_Grapes_PNG,
       bfColor: 'rgba(227,206,243,0.5)',
@@ -56,6 +65,7 @@ const Home = ({navigation}: TabsStackScreenProps<'Home'>) => {
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
     },
     {
+      index: 5,
       name: 'Grapes',
       icon: IL_Grapes_PNG,
       bfColor: 'rgba(227,206,243,0.5)',
@@ -63,6 +73,7 @@ const Home = ({navigation}: TabsStackScreenProps<'Home'>) => {
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
     },
     {
+      index: 6,
       name: 'Grapes',
       icon: IL_Grapes_PNG,
       bfColor: 'rgba(227,206,243,0.5)',
@@ -129,7 +140,19 @@ const Home = ({navigation}: TabsStackScreenProps<'Home'>) => {
                 <Text style={styles.textSeeAll}>See All</Text>
               </TouchableOpacity>
             </View>
-            <View style={styles.sectionBoxTopProduct} />
+            <View style={styles.sectionBoxTopProduct}>
+              {/* {dataTopProducts.map(props => {
+                return (
+                  <BoxItemTopProducts
+                    key={props.index}
+                    bfColor={props.bfColor}
+                    icon={props.icon}
+                    price={props.price}
+                    text={props.desc}
+                  />
+                );
+              })} */}
+            </View>
           </View>
         </ScrollView>
       </View>

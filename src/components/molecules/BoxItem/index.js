@@ -2,20 +2,10 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../res';
 
-type ColorType = string;
-
-interface BoxItensProps {
-  text: string;
-  color?: ColorType;
-  icon: React.ReactNode;
-  onPress?: () => void;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const BoxItemCategories = ({text, color, icon, onPress}: BoxItensProps) => {
+const BoxItemCategories = ({text, color, icon, onPress}) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <View style={styles.wrapperImg}>{icon}</View>
+      <View style={{...styles.wrapperImg, backgroundColor: color}}>{icon}</View>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
@@ -32,7 +22,7 @@ const styles = StyleSheet.create({
   wrapperImg: {
     height: 60,
     width: 60,
-    backgroundColor: colors.peace,
+
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
