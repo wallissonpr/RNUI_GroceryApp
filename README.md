@@ -3,3 +3,6 @@
 Estudando React Native
 
 créditos do projeto: anditorx
+
+# Status:
+## Completed
