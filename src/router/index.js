@@ -4,6 +4,8 @@ import GetStarted from '../screens/GetStarted';
 import {Favorite, Home, Notification, Profile} from '../screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import BottomNavigator from '../components/molecules/BottomNavigator';
+import Categories from '../screens/Categories';
+import Detail from '../screens/Details';
 
 const RootStack = createNativeStackNavigator();
 
@@ -47,6 +49,16 @@ const Router = () => {
       <RootStack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <RootStack.Screen
+        name="Categories"
+        component={Categories}
+        options={{headerShown: false}}
+      />
+      <RootStack.Screen
+        name="Detail"
+        component={Detail}
         options={{headerShown: false}}
       />
     </RootStack.Navigator>

@@ -1,22 +1,22 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Gap} from '../../atoms';
-import {IC_Love, colors, fonts} from '../../../res';
+import {IC_Love, fonts} from '../../../res';
 
-const BoxItemTopProducts = ({bfColor, icon, text, price, onPress}) => {
+const BoxItemTopProducts = ({bgColor, icon, text, price, onPress}) => {
   return (
     <TouchableOpacity
-      style={{...styles.container, backgroundColor: bfColor}}
+      style={{...styles.container, backgroundColor: bgColor}}
       onPress={onPress}>
-      <View style={{top: '-40px'}}>
+      <View style={{top: -40}}>
         <View>
           <Image source={icon} style={styles.image} />
           <Gap height={20} />
           <Text style={styles.text}>{text}</Text>
         </View>
         <Gap height={20} />
-        <View style={styles.image}>
-          <Text>{price}</Text>
+        <View style={styles.price}>
+          <Text style={styles.wrapperButton}>${price}</Text>
           <TouchableOpacity>
             <IC_Love />
           </TouchableOpacity>
@@ -39,7 +39,22 @@ const styles = StyleSheet.create({
   text: {
     paddingLeft: 10,
     fontSize: 16,
-    fontFamily: fonts.SemiBold,
+    fontFamily: fonts.Medium,
   },
-  image: {},
+  price: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+    marginBottom: 15,
+  },
+  wrapperButton: {
+    fontSize: 14,
+    fontFamily: fonts.Medium,
+  },
+  image: {
+    height: 110,
+    width: 110,
+    resizeMode: 'contain',
+    marginLeft: 20,
+  },
 });

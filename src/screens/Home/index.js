@@ -10,7 +10,6 @@ import {
   useColorScheme,
 } from 'react-native';
 import React from 'react';
-import {TabsStackScreenProps} from '../../router';
 import {
   IC_Bakery,
   IC_Bakery2,
@@ -19,6 +18,9 @@ import {
   IC_Search,
   IC_Vegetables,
   IL_Grapes_PNG,
+  IL_Tomato_PNG,
+  IL_Greentea_PNG,
+  IL_Cauliflawer_PNG,
   colors,
   fonts,
 } from '../../res';
@@ -33,52 +35,60 @@ const Home = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
   const dataTopProducts = [
     {
-      index: 1,
       name: 'Grapes',
       icon: IL_Grapes_PNG,
-      bfColor: 'rgba(227,206,243,0.5)',
+      bgColor: 'rgba(227,206,243,0.5)',
       price: 1.53,
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      index: 2,
-      name: 'Grapes',
-      icon: IL_Grapes_PNG,
-      bfColor: 'rgba(227,206,243,0.5)',
+      name: 'Tometo',
+      icon: IL_Tomato_PNG,
+      bgColor: 'rgba(255, 234, 232, 0.5)',
       price: 1.53,
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      index: 3,
-      name: 'Grapes',
-      icon: IL_Grapes_PNG,
-      bfColor: 'rgba(227,206,243,0.5)',
+      name: 'Drinks',
+      icon: IL_Greentea_PNG,
+      bgColor: 'rgba(187, 208, 136, 0.5)',
       price: 1.53,
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      index: 4,
-      name: 'Grapes',
-      icon: IL_Grapes_PNG,
-      bfColor: 'rgba(227,206,243,0.5)',
+      name: 'Cauliflower',
+      icon: IL_Cauliflawer_PNG,
+      bgColor: 'rgba(140, 250, 145,0.5)',
       price: 1.53,
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      index: 5,
       name: 'Grapes',
       icon: IL_Grapes_PNG,
-      bfColor: 'rgba(227,206,243,0.5)',
+      bgColor: 'rgba(227,206,243,0.5)',
       price: 1.53,
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
     {
-      index: 6,
-      name: 'Grapes',
-      icon: IL_Grapes_PNG,
-      bfColor: 'rgba(227,206,243,0.5)',
+      name: 'Tometo',
+      icon: IL_Tomato_PNG,
+      bgColor: 'rgba(255, 234, 232, 0.5)',
       price: 1.53,
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, praesentium veniam eaque molestiae commodi adipisci placeat eos ipsa.',
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    },
+    {
+      name: 'Drinks',
+      icon: IL_Greentea_PNG,
+      bgColor: 'rgba(187, 208, 136, 0.5)',
+      price: 1.53,
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    },
+    {
+      name: 'Cauliflower',
+      icon: IL_Cauliflawer_PNG,
+      bgColor: 'rgba(140, 250, 145,0.5)',
+      price: 1.53,
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     },
   ];
 
@@ -104,25 +114,25 @@ const Home = ({navigation}) => {
               icon={<IC_Fruits />}
               color="rgba(169, 178, 169, 0.5)"
               text="Fruits"
-              // onPress={() => navigation.navigate('Categories', 'Fruits')}
+              onPress={() => navigation.navigate('Categories', 'Fruits')}
             />
             <BoxItemCategories
               icon={<IC_Vegetables />}
               color="rgba(233, 255, 210, 0.5)"
               text="Vegetables"
-              // onPress={() => navigation.navigate('Categories', 'Vegetables')}
+              onPress={() => navigation.navigate('Categories', 'Vegetables')}
             />
             <BoxItemCategories
               icon={<IC_Drinks />}
               color="rgba(140, 175, 53, 0.5)"
               text="Drinks"
-              // onPress={() => navigation.navigate('Categories', 'Drinks')}
+              onPress={() => navigation.navigate('Categories', 'Drinks')}
             />
             <BoxItemCategories
               icon={<IC_Bakery />}
               color="rgba(214, 255, 218, 0.5)"
               text="Bakery"
-              // onPress={() => navigation.navigate('Categories', 'Bakery')}
+              onPress={() => navigation.navigate('Categories', 'Bakery')}
             />
             <BoxItemCategories
               icon={<IC_Bakery2 />}
@@ -141,17 +151,17 @@ const Home = ({navigation}) => {
               </TouchableOpacity>
             </View>
             <View style={styles.sectionBoxTopProduct}>
-              {/* {dataTopProducts.map(props => {
+              {dataTopProducts.map((item, index) => {
                 return (
                   <BoxItemTopProducts
-                    key={props.index}
-                    bfColor={props.bfColor}
-                    icon={props.icon}
-                    price={props.price}
-                    text={props.desc}
+                    key={index}
+                    bgColor={item.bgColor}
+                    icon={item.icon}
+                    price={item.price}
+                    text={item.name}
                   />
                 );
-              })} */}
+              })}
             </View>
           </View>
         </ScrollView>
@@ -197,5 +207,10 @@ const styles = StyleSheet.create({
     fontFamily: fonts.Medium,
     fontSize: 12,
   },
-  sectionBoxTopProduct: {},
+  sectionBoxTopProduct: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
 });
