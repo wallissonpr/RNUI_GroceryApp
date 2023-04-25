@@ -138,7 +138,7 @@ const Home = ({navigation}) => {
               icon={<IC_Bakery2 />}
               color="rgba(255, 250, 204, 0.5)"
               text="Bakery"
-              // onPress={() => navigation.navigate('Categories', 'Bakery')}
+              onPress={() => navigation.navigate('Categories', 'Bakery')}
             />
           </ScrollView>
           <View />

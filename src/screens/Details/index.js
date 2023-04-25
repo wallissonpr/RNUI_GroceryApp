@@ -7,15 +7,23 @@ import {
   useColorScheme,
   Image,
 } from 'react-native';
+import {useState} from 'react';
 import React from 'react';
 import {Header} from '../../components';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {colors, fonts} from '../../res';
+import Counter from '../../components/molecules/Counter';
 
 const Detail = ({route, navigation}) => {
   const dataParams = route.params;
   const bgColor = route.params.bgColor;
   const isDarkMode = useColorScheme() === 'dark';
+
+  const [totalItem, setTotalItem] = useState(1);
+
+  function onCounterChange(value) {
+    setTotalItem(value);
+  }
   return (
     <SafeAreaView style={styles.flex1(bgColor)}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -32,6 +40,7 @@ const Detail = ({route, navigation}) => {
           <View style={styles.wrapperTopContent}>
             <View style={styles.rowTopContent}>
               <Text style={styles.name}>{dataParams.name}</Text>
+              <Counter onValueChange={onCounterChange} />
             </View>
           </View>
         </View>
