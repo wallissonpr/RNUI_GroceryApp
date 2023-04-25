@@ -12,7 +12,10 @@ const GetStarted = ({navigation}: any) => {
         <Text style={styles.txtSlogan}>Shop Your Daily</Text>
         <Text style={styles.txtSlogan}>Necessary</Text>
         <Gap height={90} />
-        <Button onPress={() => navigation.replace('MainApp')} />
+        <Button
+          textBnt={'Get Started'}
+          onPress={() => navigation.replace('MainApp')}
+        />
       </View>
     </View>
   );

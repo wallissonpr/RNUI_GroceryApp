@@ -3,6 +3,7 @@ import Header from './Header';
 import BoxItemCategories from './BoxItem';
 import BoxItemTopProducts from './BoxItemTopProducts';
 import Counter from './Counter';
+import BoxRelatedItems from './BoxRelatedItems';
 
 export {
   Header,
@@ -10,4 +11,5 @@ export {
   BoxItemCategories,
   BoxItemTopProducts,
   Counter,
+  BoxRelatedItems,
 };

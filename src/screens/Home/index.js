@@ -159,6 +159,7 @@ const Home = ({navigation}) => {
                     icon={item.icon}
                     price={item.price}
                     text={item.name}
+                    onPress={() => navigation.navigate('Detail', item)}
                   />
                 );
               })}
